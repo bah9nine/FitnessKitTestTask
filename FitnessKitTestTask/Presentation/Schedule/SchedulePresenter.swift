@@ -19,10 +19,10 @@ class SchedulePresenter: ScheduleViewOutput {
     func viewIsReady() {
         view.setupInitialState()
         view.activityIndicatorStart()
-        fatchData()
+        fetchData()
     }
     
-    private func fatchData() {
+    private func fetchData() {
         scheduleService?.fetchSchedule(completionHandler: {[weak self] activities, error in
             guard let self = self else { return }
             if let error = error {
